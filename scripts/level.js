@@ -12,7 +12,8 @@ Object that contains level map data
 **/
 function LevelMap(canvas)
 {
-	this.level,
+	this.level;
+	this.levelDirectory = "levels/";
 	
 	this.backgroundDirectory = "backgrounds/";
 	this.background = new Image(),
@@ -99,7 +100,7 @@ LevelMap.prototype.loadLevel = function(level)
 		}
 	}
 	
-	request.open("GET", "level" + level + ".txt", true);
+	request.open("GET", this.levelDirectory + "level" + level + ".txt", true);
 	request.send();
 	
 	return;
